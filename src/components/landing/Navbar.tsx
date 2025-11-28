@@ -25,7 +25,7 @@ export const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-[100] bg-background backdrop-blur-sm transition-all duration-300 ${scrolled ? 'shadow-lg border-b border-border' : 'shadow-none border-b border-transparent'
         }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl ml-12 mr-0 sm:mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <motion.div
             initial={{ x: -20, opacity: 0 }}

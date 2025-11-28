@@ -118,14 +118,14 @@ export const StatsSection = () => {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-card relative overflow-hidden">
+    <section className="py-24 pl-12 pr-0 sm:pl-6 sm:pr-6 lg:px-8 relative overflow-hidden" style={{ backgroundColor: '#EBD8C6' }}>
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10 pl-4 sm:pl-0">
+      <div className="max-w-7xl ml-12 mr-0 sm:mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

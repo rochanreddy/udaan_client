@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 export const HeroSection = () => {
   return (
-    <section id="home" className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-background overflow-hidden min-h-[90vh] flex items-center">
+    <section id="home" className="relative pt-32 pb-20 pl-12 pr-0 sm:pl-6 sm:pr-6 lg:px-8 overflow-hidden min-h-[90vh] flex items-center" style={{ backgroundColor: '#EBD8C6' }}>
       {/* Organic Yellow Shape Background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <svg
@@ -22,7 +22,7 @@ export const HeroSection = () => {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto relative z-10 w-full pl-4 sm:pl-0">
+      <div className="max-w-7xl ml-12 mr-0 sm:mx-auto relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Section - Text Content */}
           <motion.div
