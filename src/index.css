@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 33 50% 94%;
+    --foreground: 0 0% 17%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 17%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 17%;
+
+    --primary: 8 46% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 32 44% 84%;
+    --secondary-foreground: 0 0% 17%;
+
+    --muted: 32 44% 84%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 43 87% 69%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 32 30% 85%;
+    --input: 32 30% 85%;
+    --ring: 8 46% 58%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 8 46% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 43 87% 69%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 8 46% 58%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+    /* Ultra-smooth scrolling properties */
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: none;
+    /* Smooth scroll timing */
+    scroll-timeline: auto;
+  }
+
+  /* Enhanced ultra-smooth scrolling */
+  html,
+  body {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: smooth;
+    /* Optimize scrolling performance with hardware acceleration */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    /* Reduce scroll jank */
+    contain: layout style paint;
+  }
+
+  /* Smooth scrolling for all scrollable containers */
+  [data-scroll-container] {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    * {
+      scroll-behavior: smooth;
+    }
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    /* Additional smooth scrolling properties */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Hardware acceleration for smoother scrolling */
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    /* Optimize repaints during scroll */
+    will-change: scroll-position;
+    /* Prevent scroll chaining */
+    overscroll-behavior: contain;
+    /* Smooth momentum scrolling */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Smooth scrolling for all elements */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Optimize images and media during scroll */
+  img,
+  video {
+    will-change: auto;
+    transform: translateZ(0);
+  }
+
+  /* Smooth transitions for all interactive elements */
+  a,
+  button {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
