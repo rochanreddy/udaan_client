@@ -16,16 +16,16 @@ interface TestimonialCardProps {
 }
 
 const TestimonialCard = ({ name, role, text, rating }: TestimonialCardProps) => (
-  <div className="p-8 rounded-2xl shadow-lg bg-secondary h-full">
-    <div className="flex gap-1 mb-4">
+  <div className="p-4 sm:p-5 md:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow-lg bg-secondary h-full flex flex-col">
+    <div className="flex gap-0.5 sm:gap-1 mb-3 sm:mb-4 flex-shrink-0">
       {Array.from({ length: rating }).map((_, i) => (
-        <Star key={i} className="w-5 h-5 fill-current text-accent" />
+        <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 fill-current text-accent" />
       ))}
     </div>
-    <p className="text-lg mb-6 italic text-foreground">"{text}"</p>
-    <div>
-      <p className="font-bold text-primary">{name}</p>
-      <p className="text-sm text-muted-foreground">{role}</p>
+    <p className="text-sm sm:text-base md:text-lg mb-4 sm:mb-5 md:mb-6 italic text-foreground leading-relaxed flex-grow">"{text}"</p>
+    <div className="mt-auto pt-2 sm:pt-3 border-t border-border/30">
+      <p className="font-bold text-primary text-sm sm:text-base mb-0.5 sm:mb-1">{name}</p>
+      <p className="text-xs sm:text-sm text-muted-foreground">{role}</p>
     </div>
   </div>
 );
@@ -71,27 +71,27 @@ export const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 md:px-6 lg:px-8 bg-card">
+      <div className="max-w-7xl mx-auto pl-4 sm:pl-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 md:mb-16"
         >
           <motion.span
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-block px-6 py-2 rounded-full text-sm font-semibold mb-6 bg-accent/20 text-primary"
+            className="inline-block px-4 sm:px-5 md:px-6 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-5 md:mb-6 bg-accent/20 text-primary"
           >
             Testimonials
           </motion.span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-primary leading-tight px-2 sm:px-0">
             What Our Students Say
           </h2>
-          <p className="text-xl text-muted-foreground">Success stories from our community</p>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-2 sm:px-0">Success stories from our community</p>
         </motion.div>
 
         <motion.div
@@ -99,7 +99,7 @@ export const TestimonialsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative"
+          className="relative -mx-1 sm:-mx-2 md:mx-0"
         >
           <Carousel
             opts={{
@@ -108,17 +108,18 @@ export const TestimonialsSection = () => {
               duration: 25,
               dragFree: true,
               containScroll: 'trimSnaps',
+              slidesToScroll: 1,
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent className="-ml-1 sm:-ml-2 md:-ml-4">
               {testimonials.map((testimonial, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={index} className="pl-1 sm:pl-2 md:pl-4 basis-full sm:basis-[85%] md:basis-1/2 lg:basis-1/3">
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
+                    initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.4, delay: index * 0.05 }}
                     className="h-full"
                   >
                     <TestimonialCard {...testimonial} />
@@ -126,8 +127,8 @@ export const TestimonialsSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-12" />
-            <CarouselNext className="hidden md:flex -right-12" />
+            <CarouselPrevious className="hidden md:flex -left-10 lg:-left-12" />
+            <CarouselNext className="hidden md:flex -right-10 lg:-right-12" />
           </Carousel>
         </motion.div>
       </div>

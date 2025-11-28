@@ -13,7 +13,7 @@ export const AboutSection = () => {
 
   return (
     <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 bg-card">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto pl-4 sm:pl-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Image */}
           <motion.div
