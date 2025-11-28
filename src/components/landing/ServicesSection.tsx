@@ -141,8 +141,8 @@ export const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-24 pl-12 pr-0 sm:pl-6 sm:pr-6 lg:px-8" style={{ backgroundColor: '#EBD8C6' }}>
-      <div className="max-w-7xl ml-12 mr-0 sm:mx-auto">
+    <section id="services" className="py-24 pl-6 pr-2 sm:pl-6 sm:pr-6 lg:px-8 bg-card">
+      <div className="max-w-7xl mx-auto sm:mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

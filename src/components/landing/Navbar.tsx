@@ -25,15 +25,15 @@ export const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-[100] bg-background backdrop-blur-sm transition-all duration-300 ${scrolled ? 'shadow-lg border-b border-border' : 'shadow-none border-b border-transparent'
         }`}
     >
-      <div className="max-w-7xl ml-12 mr-0 sm:mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20 gap-2 md:gap-3">
           <motion.div
             initial={{ x: -20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
             className="flex items-center"
           >
-            <span className="text-xl md:text-2xl font-bold text-primary">Udaan English Training Center</span>
+            <span className="text-sm sm:text-base md:text-2xl font-bold text-primary">Udaan English Training Center</span>
           </motion.div>
 
           <div className="hidden md:flex items-center gap-8">
@@ -59,13 +59,13 @@ export const Navbar = () => {
           </div>
 
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-0.5"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-primary" />
+              <X className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
             ) : (
-              <Menu className="w-6 h-6 text-primary" />
+              <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
             )}
           </button>
         </div>
