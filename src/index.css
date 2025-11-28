@@ -115,11 +115,6 @@ All colors MUST be HSL.
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-y: smooth;
-    /* Optimize scrolling performance with hardware acceleration */
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    /* Reduce scroll jank */
-    contain: layout style paint;
   }
 
   /* Smooth scrolling for all scrollable containers */
@@ -133,7 +128,7 @@ All colors MUST be HSL.
     html {
       scroll-behavior: smooth;
     }
-    
+
     * {
       scroll-behavior: smooth;
     }
@@ -144,11 +139,6 @@ All colors MUST be HSL.
     /* Additional smooth scrolling properties */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* Hardware acceleration for smoother scrolling */
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
-    /* Optimize repaints during scroll */
-    will-change: scroll-position;
     /* Prevent scroll chaining */
     overscroll-behavior: contain;
     /* Smooth momentum scrolling */

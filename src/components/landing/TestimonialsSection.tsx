@@ -119,7 +119,6 @@ export const TestimonialsSection = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    whileHover={{ scale: 1.02, y: -5 }}
                     className="h-full"
                   >
                     <TestimonialCard {...testimonial} />

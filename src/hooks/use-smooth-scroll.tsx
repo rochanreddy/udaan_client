@@ -13,12 +13,12 @@ export const useSmoothScroll = () => {
       if (Math.abs(scrollVelocity) > minVelocity) {
         const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
         const momentum = scrollVelocity * 0.3; // Reduced momentum for smoother feel
-        
+
         window.scrollBy({
           top: momentum,
           behavior: 'smooth',
         });
-        
+
         scrollVelocity *= momentumDecay;
         requestAnimationFrame(applyMomentum);
       } else {

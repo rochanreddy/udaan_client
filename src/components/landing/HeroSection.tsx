@@ -35,19 +35,17 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-foreground"
-              style={{ fontFamily: 'serif' }}
+              className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-[1.1] text-foreground tracking-tight"
             >
-              Modern English
-              <br />
-              Training Service
+              <span className="block mb-2">Modern English</span>
+              <span className="block text-teal-600">Training Service</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-lg md:text-xl mb-8 leading-relaxed text-foreground/90 max-w-lg"
+              className="text-lg md:text-xl mb-8 leading-[1.7] text-foreground/80 max-w-lg font-normal"
             >
               Udaan is an acclaimed multidisciplinary training center specializing in spoken English, competitive exam preparation, and language skills that redefine learning excellence.
             </motion.p>

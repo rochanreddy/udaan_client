@@ -24,7 +24,7 @@ const FeatureCard = ({ icon: Icon, title, description, index }: FeatureCardProps
           <Icon className="w-10 h-10 text-accent-foreground" />
         </div>
       </div>
-      
+
       {/* Content */}
       <div className="flex-1">
         <h3 className="text-2xl font-bold mb-3 text-primary">
@@ -34,7 +34,7 @@ const FeatureCard = ({ icon: Icon, title, description, index }: FeatureCardProps
           {description}
         </p>
       </div>
-      
+
       {/* Number Badge */}
       <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
         <span className="text-sm font-bold text-primary">{index + 1}</span>
@@ -77,7 +77,7 @@ export const FeaturesSection = () => {
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
-      
+
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
