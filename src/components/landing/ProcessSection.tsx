@@ -21,17 +21,17 @@ const ProcessStep = ({ icon: Icon, title, description, step, index }: ProcessSte
       <div className="flex flex-col items-center text-center">
         {/* Step Number */}
         <div className="relative mb-6">
-          <div className="w-20 h-20 rounded-full bg-gradient-to-br from-accent to-accent/70 flex items-center justify-center shadow-lg relative z-10">
-            <Icon className="w-10 h-10 text-accent-foreground" />
+          <div className="w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-accent to-accent/70 flex items-center justify-center shadow-lg relative z-10">
+            <Icon className="w-7 h-7 sm:w-10 sm:h-10 text-accent-foreground" />
           </div>
-          <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm">
+          <div className="absolute -top-1.5 -right-1.5 sm:-top-2 sm:-right-2 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-xs sm:text-sm">
             {step}
           </div>
         </div>
 
         {/* Content */}
-        <h3 className="text-2xl font-bold mb-3 text-primary">{title}</h3>
-        <p className="text-base text-muted-foreground max-w-xs">{description}</p>
+        <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 text-primary">{title}</h3>
+        <p className="text-sm sm:text-base text-muted-foreground max-w-xs">{description}</p>
       </div>
 
       {/* Connector Line (except for last item) */}
@@ -73,34 +73,34 @@ export const ProcessSection = () => {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-background">
+    <section className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-7xl mx-auto pl-4 sm:pl-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-10 sm:mb-20"
         >
           <motion.span
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-block px-6 py-2 rounded-full text-sm font-semibold mb-6 bg-accent/20 text-primary"
+            className="inline-block px-4 py-1.5 sm:px-6 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-6 bg-accent/20 text-primary"
           >
             How It Works
           </motion.span>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
+          <h2 className="text-2xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 text-foreground">
             Your Learning
             <br />
             <span className="text-primary">Journey</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-xl text-muted-foreground max-w-2xl mx-auto">
             Simple steps to transform your English skills and achieve your goals
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-4 relative contain-abs">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-4 relative contain-abs">
           {steps.map((step, index) => (
             <ProcessStep key={index} {...step} index={index} />
           ))}

@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 export const HeroSection = () => {
   return (
-    <section id="home" className="contain-abs pt-32 pb-20 pl-6 pr-2 sm:pl-6 sm:pr-6 lg:px-8 bg-background min-h-[90vh] flex items-center">
+    <section id="home" className="contain-abs pt-20 pb-12 sm:pt-32 sm:pb-20 pl-6 pr-2 sm:pl-6 sm:pr-6 lg:px-8 bg-background min-h-[80vh] sm:min-h-[90vh] flex items-center">
       {/* Organic Yellow Shape Background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <svg
@@ -35,7 +35,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-[1.1] text-foreground tracking-tight"
+              className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 sm:mb-6 leading-[1.1] text-foreground tracking-tight"
             >
               <span className="block mb-2">Modern English</span>
               <span className="block text-teal-600">Training Service</span>
@@ -45,7 +45,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-lg md:text-xl mb-8 leading-[1.7] text-foreground/80 max-w-lg font-normal"
+              className="text-sm sm:text-lg md:text-xl mb-6 sm:mb-8 leading-[1.7] text-foreground/80 max-w-lg font-normal"
             >
               Udaan is an acclaimed multidisciplinary training center specializing in spoken English, competitive exam preparation, and language skills that redefine learning excellence.
             </motion.p>
@@ -58,11 +58,11 @@ export const HeroSection = () => {
             >
               <Button
                 size="lg"
-                className="rounded-md px-8 py-6 text-base font-medium bg-teal-600 hover:bg-teal-700 text-white shadow-lg flex items-center gap-2"
+                className="rounded-md px-5 py-3 sm:px-8 sm:py-6 text-sm sm:text-base font-medium bg-teal-600 hover:bg-teal-700 text-white shadow-lg flex items-center gap-2"
                 style={{ backgroundColor: '#0d9488' }}
               >
                 Explore Now
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
             </motion.div>
           </motion.div>
@@ -74,7 +74,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative z-10 lg:pl-8 flex items-center justify-center"
           >
-            <div className="relative w-full h-[500px] md:h-[600px] flex items-center justify-center">
+            <div className="relative w-full h-[300px] sm:h-[500px] md:h-[600px] flex items-center justify-center">
               <img
                 src="/images/hero-section-image.svg"
                 alt="Global English Learning Illustration"

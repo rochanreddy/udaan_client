@@ -48,29 +48,29 @@ export const FAQSection = () => {
   ];
 
   return (
-    <section id="faq" className="py-24 px-4 sm:px-6 lg:px-8 bg-background">
+    <section id="faq" className="py-12 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-4xl mx-auto pl-4 sm:pl-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <motion.span
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-block px-6 py-2 rounded-full text-sm font-semibold mb-6 bg-accent/20 text-primary"
+            className="inline-block px-4 py-1.5 sm:px-6 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-6 bg-accent/20 text-primary"
           >
             Frequently Asked Questions
           </motion.span>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
+          <h2 className="text-2xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 text-foreground">
             Got Questions?
             <br />
             <span className="text-primary">We Have Answers</span>
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-sm sm:text-xl text-muted-foreground">
             Find answers to common questions about our courses and services
           </p>
         </motion.div>
@@ -81,7 +81,7 @@ export const FAQSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <Accordion type="single" collapsible className="w-full space-y-4">
+          <Accordion type="single" collapsible className="w-full space-y-3 sm:space-y-4">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
@@ -92,12 +92,12 @@ export const FAQSection = () => {
               >
                 <AccordionItem
                   value={`item-${index}`}
-                  className="bg-card rounded-2xl px-6 border-2 border-transparent hover:border-primary/20 transition-colors"
+                  className="bg-card rounded-xl sm:rounded-2xl px-4 sm:px-6 border-2 border-transparent hover:border-primary/20 transition-colors"
                 >
-                  <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:no-underline">
+                  <AccordionTrigger className="text-left text-sm sm:text-lg font-semibold text-foreground hover:no-underline">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-base text-muted-foreground pt-2">
+                  <AccordionContent className="text-sm sm:text-base text-muted-foreground pt-2">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

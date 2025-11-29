@@ -18,7 +18,7 @@ const ServiceItem = ({ title, description, features, image, imageAlt, reverse = 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay: index * 0.2 }}
-      className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 items-center`}
+      className={`flex flex-col ${reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-6 sm:gap-12 items-center`}
     >
       {/* Image Section */}
       <motion.div
@@ -32,7 +32,7 @@ const ServiceItem = ({ title, description, features, image, imageAlt, reverse = 
           <img
             src={image}
             alt={imageAlt}
-            className="w-full h-[400px] md:h-[500px] object-contain"
+            className="w-full h-[250px] sm:h-[400px] md:h-[500px] object-contain"
           />
         </div>
       </motion.div>
@@ -47,13 +47,13 @@ const ServiceItem = ({ title, description, features, image, imageAlt, reverse = 
       >
         <div className="space-y-6">
           <div>
-            <h3 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
+            <h3 className="text-xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-primary">
               {title}
             </h3>
             <div className="w-20 h-1 bg-accent rounded-full"></div>
           </div>
           
-          <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
+          <p className="text-sm sm:text-lg md:text-xl leading-relaxed text-muted-foreground">
             {description}
           </p>
 
@@ -68,9 +68,9 @@ const ServiceItem = ({ title, description, features, image, imageAlt, reverse = 
                 className="flex items-start gap-3"
               >
                 <div className="flex-shrink-0 mt-1">
-                  <CheckCircle2 className="w-6 h-6 text-accent" />
+                  <CheckCircle2 className="w-4 h-4 sm:w-6 sm:h-6 text-accent" />
                 </div>
-                <p className="text-base md:text-lg text-foreground">{feature}</p>
+                <p className="text-sm sm:text-base md:text-lg text-foreground">{feature}</p>
               </motion.div>
             ))}
           </div>
@@ -141,34 +141,34 @@ export const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-24 pl-6 pr-2 sm:pl-6 sm:pr-6 lg:px-8 bg-card">
+    <section id="services" className="py-12 sm:py-24 pl-6 pr-2 sm:pl-6 sm:pr-6 lg:px-8 bg-card">
       <div className="max-w-7xl mx-auto sm:mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-10 sm:mb-20"
         >
           <motion.span
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-block px-6 py-2 rounded-full text-sm font-semibold mb-6 bg-accent/20 text-primary"
+            className="inline-block px-4 py-1.5 sm:px-6 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-6 bg-accent/20 text-primary"
           >
             Our Services
           </motion.span>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
+          <h2 className="text-2xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 text-foreground">
             Comprehensive English
             <br />
             <span className="text-primary">Learning Solutions</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-sm sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Discover our range of specialized English training programs designed to meet your unique learning goals and career aspirations
           </p>
         </motion.div>
 
-        <div className="space-y-32">
+        <div className="space-y-16 sm:space-y-32">
           {services.map((service, index) => (
             <ServiceItem key={index} {...service} index={index} />
           ))}

@@ -75,8 +75,8 @@ const StatItem = ({ icon: Icon, number, label, index }: StatItemProps) => {
       className="text-center"
     >
       <div className="flex justify-center mb-4">
-        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent to-accent/70 flex items-center justify-center shadow-lg">
-          <Icon className="w-8 h-8 text-accent-foreground" />
+        <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-accent to-accent/70 flex items-center justify-center shadow-lg">
+          <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-accent-foreground" />
         </div>
       </div>
       <motion.h3
@@ -84,11 +84,11 @@ const StatItem = ({ icon: Icon, number, label, index }: StatItemProps) => {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
-        className="text-5xl md:text-6xl font-bold mb-2 text-foreground"
+        className="text-3xl sm:text-5xl md:text-6xl font-bold mb-2 text-foreground"
       >
         <CountUpNumber value={value} suffix={suffix} duration={2} />
       </motion.h3>
-      <p className="text-lg md:text-xl text-muted-foreground font-medium">{label}</p>
+      <p className="text-sm sm:text-lg md:text-xl text-muted-foreground font-medium">{label}</p>
     </motion.div>
   );
 };
@@ -118,7 +118,7 @@ export const StatsSection = () => {
   ];
 
   return (
-    <section className="contain-abs py-24 pl-6 pr-2 sm:pl-6 sm:pr-6 lg:px-8 bg-card">
+    <section className="contain-abs py-12 sm:py-24 pl-6 pr-2 sm:pl-6 sm:pr-6 lg:px-8 bg-card">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-96 h-96 bg-accent rounded-full blur-3xl max-w-[50vw] max-h-[50vh]"></div>
@@ -131,27 +131,27 @@ export const StatsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <motion.span
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-block px-6 py-2 rounded-full text-sm font-semibold mb-6 bg-accent/20 text-primary"
+            className="inline-block px-4 py-1.5 sm:px-6 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-4 sm:mb-6 bg-accent/20 text-primary"
           >
             Our Achievements
           </motion.span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-foreground">
             Numbers That Speak
             <br />
             <span className="text-primary">For Our Excellence</span>
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-sm sm:text-xl text-muted-foreground">
             Trusted by thousands of students across India
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 md:gap-12">
           {stats.map((stat, index) => (
             <StatItem key={index} {...stat} index={index} />
           ))}

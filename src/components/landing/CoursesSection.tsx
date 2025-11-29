@@ -12,24 +12,24 @@ interface CourseCardProps {
 const CourseCard = ({ title, duration, features, price }: CourseCardProps) => (
   <motion.div
     whileHover={{ y: -10 }}
-    className="p-8 rounded-2xl shadow-xl bg-secondary"
+    className="p-4 sm:p-8 rounded-xl sm:rounded-2xl shadow-xl bg-secondary"
   >
-    <h3 className="text-2xl font-bold mb-3 text-primary">{title}</h3>
+    <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-3 text-primary">{title}</h3>
     <div className="flex items-center gap-2 mb-4 text-muted-foreground">
-      <Clock className="w-4 h-4" />
-      <span className="text-sm">{duration}</span>
+      <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+      <span className="text-xs sm:text-sm">{duration}</span>
     </div>
-    <ul className="space-y-3 mb-6">
+    <ul className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
       {features.map((feature, i) => (
         <li key={i} className="flex items-start gap-2">
-          <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5 text-accent" />
-          <span className="text-foreground">{feature}</span>
+          <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 mt-0.5 text-accent" />
+          <span className="text-sm sm:text-base text-foreground">{feature}</span>
         </li>
       ))}
     </ul>
     <div className="mb-4">
-      <span className="text-sm text-muted-foreground">Starting from</span>
-      <p className="text-2xl font-bold text-primary">{price}</p>
+      <span className="text-xs sm:text-sm text-muted-foreground">Starting from</span>
+      <p className="text-xl sm:text-2xl font-bold text-primary">{price}</p>
     </div>
     <Button className="w-full rounded-full">Explore Course</Button>
   </motion.div>
@@ -73,23 +73,23 @@ export const CoursesSection = () => {
   ];
 
   return (
-    <section id="courses" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+    <section id="courses" className="py-12 sm:py-20 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-7xl mx-auto pl-4 sm:pl-0">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-primary">
             Our Top Courses
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-sm sm:text-xl text-muted-foreground">
             Choose the perfect course for your goals
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           {courses.map((course, i) => (
             <motion.div
               key={i}
