@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 export const HeroSection = () => {
   return (
-    <section id="home" className="relative pt-32 pb-20 pl-6 pr-2 sm:pl-6 sm:pr-6 lg:px-8 bg-background overflow-hidden min-h-[90vh] flex items-center">
+    <section id="home" className="contain-abs pt-32 pb-20 pl-6 pr-2 sm:pl-6 sm:pr-6 lg:px-8 bg-background min-h-[90vh] flex items-center">
       {/* Organic Yellow Shape Background */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <svg
@@ -78,7 +78,7 @@ export const HeroSection = () => {
               <img
                 src="/images/hero-section-image.svg"
                 alt="Global English Learning Illustration"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain max-w-full"
               />
             </div>
           </motion.div>

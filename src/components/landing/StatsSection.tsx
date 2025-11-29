@@ -118,11 +118,11 @@ export const StatsSection = () => {
   ];
 
   return (
-    <section className="py-24 pl-6 pr-2 sm:pl-6 sm:pr-6 lg:px-8 bg-card relative overflow-hidden">
+    <section className="contain-abs py-24 pl-6 pr-2 sm:pl-6 sm:pr-6 lg:px-8 bg-card">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-accent rounded-full blur-3xl max-w-[50vw] max-h-[50vh]"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary rounded-full blur-3xl max-w-[50vw] max-h-[50vh]"></div>
       </div>
 
       <div className="max-w-7xl mx-auto sm:mx-auto relative z-10">

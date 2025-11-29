@@ -99,7 +99,7 @@ export const TestimonialsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative -mx-1 sm:-mx-2 md:mx-0"
+          className="relative contain-abs md:mx-0"
         >
           <Carousel
             opts={{

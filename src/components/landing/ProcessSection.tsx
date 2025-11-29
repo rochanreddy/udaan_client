@@ -100,7 +100,7 @@ export const ProcessSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-4 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-4 relative contain-abs">
           {steps.map((step, index) => (
             <ProcessStep key={index} {...step} index={index} />
           ))}
